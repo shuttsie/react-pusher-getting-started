@@ -9,14 +9,6 @@
     },
     "env": {
       "Type": "String"
-    },
-    "storagechatsName": {
-      "Type": "String",
-      "Default": "storagechatsName"
-    },
-    "storagechatsArn": {
-      "Type": "String",
-      "Default": "storagechatsArn"
     }
   },
   "Conditions": {
@@ -41,12 +33,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "reactpushergettingst1b5eb2fb",
+            "mylambda",
             {
               "Fn::Join": [
                 "",
                 [
-                  "reactpushergettingst1b5eb2fb",
+                  "mylambda",
                   "-",
                   {
                     "Ref": "env"
@@ -77,7 +69,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-reactpushergettingst-dev-125117-deployment",
-          "S3Key": "amplify-builds/reactpushergettingst1b5eb2fb-53546c33355864657a30-build.zip"
+          "S3Key": "amplify-builds/mylambda-733546554b6445344f2f-build.zip"
         }
       }
     },
@@ -87,12 +79,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "reactpushergettingstLambdaRoledc23e02d",
+            "reactpushergettingstLambdaRoleaa7c04e6",
             {
               "Fn::Join": [
                 "",
                 [
-                  "reactpushergettingstLambdaRoledc23e02d",
+                  "reactpushergettingstLambdaRoleaa7c04e6",
                   "-",
                   {
                     "Ref": "env"
@@ -158,34 +150,6 @@
                   }
                 ]
               }
-            },
-            {
-              "Effect": "Allow",
-              "Action": [
-                "dynamodb:DescribeTable",
-                "dynamodb:GetItem",
-                "dynamodb:Query",
-                "dynamodb:Scan",
-                "dynamodb:PutItem",
-                "dynamodb:UpdateItem",
-                "dynamodb:DeleteItem"
-              ],
-              "Resource": [
-                {
-                  "Ref": "storagechatsArn"
-                },
-                {
-                  "Fn::Join": [
-                    "/",
-                    [
-                      {
-                        "Ref": "storagechatsArn"
-                      },
-                      "index/*"
-                    ]
-                  ]
-                }
-              ]
             }
           ]
         }

@@ -1,0 +1,7 @@
+{
+  "httpMethod": "POST",
+  "body": "{\"username\": \"Ryan!\" \"message\": \"Hello!\"}",
+  "path": "/message",
+  "resource": "/{proxy+}",
+  "queryStringParameters": {}
+}

@@ -37,7 +37,7 @@ class App extends Component {
         username: this.state.username,
         message: this.state.text,
       };
-      axios.post('https://test.dndnm04kjwoo2.amplifyapp.com/message', payload);
+      axios.post('/message', payload);
     } else {
       this.setState({ text: e.target.value });
     }

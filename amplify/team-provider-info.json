@@ -10,6 +10,17 @@
       "StackName": "amplify-reactpushergettingst-dev-125117",
       "StackId": "arn:aws:cloudformation:us-east-2:076005434014:stack/amplify-reactpushergettingst-dev-125117/b7cdfff0-ff57-11ea-b250-06e35090f892",
       "AmplifyAppId": "d1j2jggsuerlhc"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d1j2jggsuerlhc",
+          "type": "cicd"
+        }
+      },
+      "function": {
+        "reactpushergettingst1b5eb2fb": {}
+      }
     }
   }
 }

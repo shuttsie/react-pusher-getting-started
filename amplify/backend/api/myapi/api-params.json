@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/message",
+            "lambdaFunction": "mylambda",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/message"
+        }
+    ],
+    "resourceName": "myapi",
+    "apiName": "myapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "mylambda"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-reactpushergettingst-dev-125117-authRole",
+        "unAuthRoleName": "amplify-reactpushergettingst-dev-125117-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "mylambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
