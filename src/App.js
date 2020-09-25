@@ -12,19 +12,20 @@ class App extends Component {
     this.state = {
       text: '',
       username: '',
-      chats: []
+      chats: [],
     };
+    console.log(this.state.chats);
   }
 
   componentDidMount() {
     const username = window.prompt('Username: ', 'Anonymous');
     this.setState({ username });
-    const pusher = new Pusher('YOUR_PUSHER_APP_KEY', {
-      cluster: 'YOUR_CLUSTER',
-      encrypted: true
+    const pusher = new Pusher('346aa30b9201bc2509da', {
+      cluster: 'us2',
+      encrypted: true,
     });
     const channel = pusher.subscribe('chat');
-    channel.bind('message', data => {
+    channel.bind('message', (data) => {
       this.setState({ chats: [...this.state.chats, data], test: '' });
     });
     this.handleTextChange = this.handleTextChange.bind(this);
@@ -34,9 +35,9 @@ class App extends Component {
     if (e.keyCode === 13) {
       const payload = {
         username: this.state.username,
-        message: this.state.text
+        message: this.state.text,
       };
-      axios.post('http://localhost:5000/message', payload);
+      axios.post('https://test.dndnm04kjwoo2.amplifyapp.com/message', payload);
     } else {
       this.setState({ text: e.target.value });
     }
@@ -44,10 +45,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React-Pusher Chat</h1>
+      <div className='App'>
+        <header className='App-header'>
+          <img src={logo} className='App-logo' alt='logo' />
+          <h1 className='App-title'>Welcome to React-Pusher Chat</h1>
         </header>
         <section>
           <ChatList chats={this.state.chats} />

@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/message",
+            "lambdaFunction": "reactpushergettingst1b5eb2fb",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/message"
+        }
+    ],
+    "resourceName": "chat",
+    "apiName": "chat",
+    "functionArns": [
+        {
+            "lambdaFunction": "reactpushergettingst1b5eb2fb"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-reactpushergettingst-dev-125117-authRole",
+        "unAuthRoleName": "amplify-reactpushergettingst-dev-125117-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "reactpushergettingst1b5eb2fb",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
